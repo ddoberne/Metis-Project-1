@@ -14,7 +14,7 @@ Turnstile data is available as .csv files, and the frequency table exists as a s
 ### What is an individual sample/unit of analysis in this project? What characteristics/features do you expect to work with?
 Number of entries from the turnstiles at a specific station is the data will be what I am looking for. Time between trains for each line depending on time of day is also necessary for analysis.
 ### If modeling, what will you predict as your target?
-I will be looking for stations where there are a high number of entries per time between trains. My aim is to disply the stations with the best ratios of traffic to time waiting. Exits per time and raw entries will also be observed, though as secondary observations.
+My aim is to disply the stations with the best ratios of traffic to time waiting. I will be looking for stations where there are a high number of entries per time between trains.  Exits per time and raw entries will also be observed, though as secondary observations.
 ## Tools:
 ### How do you intend to meet the tools requirement of the project?
 SQLAlchemy will be used to pull the data sets and populate the database. Two tables will be created, so a join will be necessary. A SQL query will be used to pull the data into a pandas dataframe. Pandas will be used to gain the insights I am looking for. Finally, matplotlib will be used to present the data in a clear way.
