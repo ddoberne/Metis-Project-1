@@ -6,12 +6,16 @@ Reaching the largest number of people possible is certainly an important goal of
 ## Data
 MTA turnstile data was used from March 2019-August 2019, featuring hundreds of thousands of entries detailing the time, place, and number of passengers. Additionally, a subway train frequency table was referenced in order to determine how frequently trains visited each station.
 ## Algorithms
-- SQLAlchemy was used to download the data from the website, populate a database, and perform a SQL query on the data
-- pass
+- SQLAlchemy statement
+- something
+The amount of traffic for each entry was determined by taking the difference between two adjacent entries' counter for each turnstile, then deleting each entry that had no previous entry to reference. The absolute value was used in order to account for turnstiles that were counting backward. Despite this, there were still some anomalies, and a histogram of the number of entries across the entire database showed that values greater than 10^3.7 were statistical outliers and likely the result of some error.
+
+The most difficult part of the project was determining the number of trains that entered each station for the recorded interval, as each line has a different frequency depending on time of day, unique to each individual line. This was determined by taking the timestamp of the entry, counting the timedelta between the entry and the most recent schedule change, then using that timedelta with the lines serviced by the station to reference the frequency table. This was repeated until the full four-hour span of the entry was accounted for.
 
 ## Tools
 - SQLAlchemy was used to download the data, populate the database, and perform an SQL query
 - Pandas was used for most of the data cleaning and manipulation
+- DateTime was used to determine the number of trains for each period, as well as group the entries to spot weekly trends
 - Matplotlib was used for the data visualization
 
 ## Communication
