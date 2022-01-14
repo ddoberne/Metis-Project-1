@@ -6,7 +6,7 @@ Reaching the largest number of people possible is certainly an important goal of
 ## Data
 MTA turnstile data was used from March 2019-August 2019, featuring hundreds of thousands of entries detailing the time, place, and number of passengers. Additionally, a subway train frequency table was referenced in order to determine how frequently trains visited each station.
 ## Algorithms
-- SQLAlchemy statement
+- SQLAlchemy statement including WHERE, AND, UNION, and LIKE
 - something
 The amount of traffic for each entry was determined by taking the difference between two adjacent entries' counter for each turnstile, then deleting each entry that had no previous entry to reference. The absolute value was used in order to account for turnstiles that were counting backward. Despite this, there were still some anomalies, and a histogram of the number of entries across the entire database showed that values greater than 10^3.7 were statistical outliers and likely the result of some error.
 
